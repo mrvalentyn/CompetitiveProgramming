@@ -5,7 +5,9 @@ using namespace std;
 ifstream f("maxd.in");
 ofstream g("maxd.out");
 
-int nrdiv(int n)
+int a, b, nrmax = 0, imax, ct = 0;
+
+int nrdiv(int n) ///function that returns the number of dividers (ans) of a positive integer.
 {
         int rez=1;
         int p,d;
@@ -31,9 +33,8 @@ int nrdiv(int n)
 
 int main()
 {
-    int a, b, nrmax, imax, ct;
+    
     f >> a >> b;
-    nrmax = 0; ct = 0;
     for(int i=a;i<=b;i++)
     {
         int nrd=nrdiv(i);
@@ -46,5 +47,7 @@ int main()
         else if(nrd==nrmax)  ct++;
     }
     g<<imax<<" "<<nrmax<<" "<<ct;
+    f.close();
+    g.close();
     return 0;
 }
