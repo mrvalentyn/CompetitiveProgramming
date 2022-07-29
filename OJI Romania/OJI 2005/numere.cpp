@@ -44,14 +44,7 @@ void rez()
     {
         if(ap[i] == 0) mx = i;
     }
-    /*An optimization for this loop is this, im dumb, i've written this sol too fast =)
-        
-        int j = n * n;
-        while(j >= 1 && ap[j] != 0)
-            j--;
-        mx = j;
     
-    */
     g << mn << " " << mx;
 }
 int main()
