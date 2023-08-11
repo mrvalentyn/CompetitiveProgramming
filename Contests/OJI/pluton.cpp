@@ -1,61 +1,66 @@
-/// 90/100 pts solution(pbinfo)
+///github:mrvalentyn
+///updated solution(100pts)
 
-
-#include <fstream>
-#include <algorithm>
+#include<bits/stdc++.h>
 using namespace std;
-ifstream f("pluton.in");
-ofstream g("pluton.out");
-
-int v[4000], a[4000], n, ct;
-int pluton(int n)
-{
-    int f[10] = {0} , rez = 0;
-    while(n) {f[n % 10] ++ ; n /= 10;}
-    for(int i = 1 ; i <= 9 ; ++i)
-        for(int j = 1 ; j <= f[i] ; ++j)
-            rez = rez * 10 + i;
-    for(int i = 1 ; i <= f[0] ; ++i) rez *= 10;
-    return rez;
+#define ull unsigned long long
+#define ll long long
+#define intmx INT_MAX
+#define in ifstream f
+#define out ofstream g
+///
+int n,v[4001],a[4001];
+set<int> kd;
+int srt(int x){
+    int f[10]={0};
+    while(x){
+        ++f[x%10];
+        x/=10;
+    }
+    int ret=0;
+    for(int i=1;i<=9;++i){
+        for(int j=1;j<=f[i];++j)ret=ret*10+i;
+    }
+    for(int i=1;i<=f[0];++i)ret*=10;
+    return ret;
 }
 
+
 int main(){
-    f >> n;
-    for(int i = 0; i < n; i++){
-        f >> v[i];
-        a[i] = pluton(v[i]);
+    in("pluton.in");
+    out("pluton.out");
+    f>>n;
+    for(int i=0;i<n;++i){
+        f>>v[i];
+        a[i]=srt(v[i]);
+
     }
-    ct = 0;
-    sort(a, a + n);
-    for(int i = 0; i < n; i++)
-        if(a[i] != a[i + 1]) ct++;
-    g << ct << endl;
+    sort(a,a+n);
+    //for(int i=1;i<=n;++i)g<<a[i]<<' ';
+    //g<<endl;
+    int y=0;
+    for(int i=0;i<n;++i){
+        kd.insert(a[i]);
+        if(a[i]!=a[i-1])++y;
+    }
+    g<<kd.size()<<'\n';
+    int l=1,lmx=-1,x;
 
-    ct = 0;
-    int lmax = -1;
-    int l = 1;
-    int x;
-
-    for(int i = 0; i < n - 1; i++){
-        if(a[i] != a[i + 1]) l = 1;
+    for(int i=y=0;i<n;++i){
+        if(a[i]!=a[i-1])l=1;
         else{
-            l++;
-            if(l > lmax){lmax = l, ct = 0, x = a[i];}
-            if(l == lmax) ct++;
+            ++l;
+            if(l>lmx){
+                lmx=l,x=a[i],y=0;
+            }
+            if(l==lmx)++y;
         }
     }
-    g << lmax << endl << ct << endl;
-    for(int i = 0; i < n; i++)
-        if(x == pluton(v[i])) g << v[i] << ' ';
+    g<<lmx<<'\n'<<y<<'\n';
 
-
-
-
-
-
-
-
-
+    for(int i=0;i<n;++i){
+        if(srt(v[i])==x) g<<v[i]<<' ';
+    }
     f.close();
     g.close();
     return 0;
