@@ -1,2 +1,2 @@
 # CompetitiveProgramming
-My random competitive programming solutions (+other stuff)
+My random competitive programming solutions (+macros, custom header files and much more)
