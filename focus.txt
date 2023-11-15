@@ -1,0 +1,42 @@
+All terms and difficult algorithms that I should focus on or revise.
+
+
+Focusing on:
+- invers modular
+- dp classic(ALL)
+- kmp
+- bitwise ops
+- hash
+- pick Theorem
+- coverage problems
+- radix sort
+- heap
+- binary indexed trees
+- graphs(ALL)
+- trees+interval trees
+- trie
+- combinatorics(ALL)
+- geometry(ALL)
+- totient
+- gray codes
+- sqrt range(Batog "smen")
+- game theory
+- 2sat
+- aho-corasick and manacher
+- heavy path decomposition
+- gauss algorithm
+- probabilities
+- treaps
+- sufixoid array
+- centroid
+- Greedy(ADVANCED)
+- multiset,unordered_map,priority_queue,deque
+
+To be revised:
+- bigint
+- pointers
+- cstring functions(revise)
+- mars "smen"
+- merge sort
+- quick sort
+- set,map
