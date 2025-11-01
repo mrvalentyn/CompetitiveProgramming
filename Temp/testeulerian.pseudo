@@ -1,0 +1,7 @@
+euler (nod v)
+      cat timp (v are vecini)
+          w = un vecin aleator al lui v
+          sterge_muchie (v, w)
+          euler (w)
+      sfarsit cat timp
+      adauga v la ciclu
