@@ -1,4 +1,4 @@
-///Solution written by mrvalentyn
+///authior:qvalentIn
 /**
 - Use a frequence array to track every value that appears in the matrix
 - Search all the values that appears 0 times in the freq. array and use mn and mx to 
