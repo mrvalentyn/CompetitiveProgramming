@@ -1,4 +1,4 @@
-///solution written by mrvalentyn
+///solution written by qvalentIn
 
 #include <fstream>
 using namespace std;
