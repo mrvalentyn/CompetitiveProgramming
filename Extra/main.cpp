@@ -1,6 +1,6 @@
 /*All my macros placed inside a .cpp file,
 so I won't waste any time by writing all of this*/
-//github:mrvalentyn
+//github:qvalentIn
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
