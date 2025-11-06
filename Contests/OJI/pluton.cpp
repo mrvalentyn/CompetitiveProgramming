@@ -1,4 +1,4 @@
-///github:mrvalentyn
+///github:qvalentin
 ///updated solution(100pts)
 
 #include<bits/stdc++.h>
